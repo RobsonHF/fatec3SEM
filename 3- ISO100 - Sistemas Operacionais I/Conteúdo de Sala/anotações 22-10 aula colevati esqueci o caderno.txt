@@ -1,0 +1,148 @@
+segcon - campeonato de programação
+- bons resultados = emprego
+
+7/11 - met up com a IBM -> início dos desafios da IBM tbm, outra possibilidade de emprego
+
+quinta - palestra da ericson inovation -> recrutamento.
+
+abrindo turmas da universidade da cisco - cursos cisco de graça, online. pode ohar os cursos no net acadademy. isso dará desconto nas certificações
+
+python em sql, ia - curso tb
+
+30/10 - 13h prof colevati -> palestra no auditório - gestão de tempo
+
+posso mandar whatsapp pro PROFESSOR ESTEVÃO - 11975903438
+
+terça na sala de estágio 
+
+
+GERENCIAMENTO DE MEMÓRIA
+
+pequena, lenta e volátil
+
+eu tenho níveis de memória voláteis - apoio ao processamento, cache, memória principal e registradores. Apenas a RAM ajuda o processamento, o HD não.
+
+e a memória secundário, lenta, persistente. não ajuda o processamento, apenas armazena dados. Mas é grandona.
+
+Tem técnicas que combinam o espaço livre da HD com a RAM.
+
+
+===
+coloca o sistema operacional em ROM. libera espaço na RAM e fica de boa pra rodar outros programas. Porém não é uma boa ideia colocar pq o SO se torna volátil também. Aumenta a memória mas a abordagem não é mto boa.
+
+Isso era usado antigamente, qndo não tinha mto SO, e o pouco que tinha não era como hoje.
+
+Drive é apenas o caminho de endereçamento do hardware. Então deixa o que não muda na ROM e o que muda na RAM. é a BIOS.
+
+====
+
+criou-se a programação modular
+usava a técnia de Overlay (sobreposição). > eu fragmento minha aplicação, parte fica fora em uma fita por exemplo. eu chamo pra memória a parte que precisa e dps qndo for usar o outro eu carrego o outro. Isso é a mesma ideia de modulação na programação com funções e procedimentos.
+
+ALOCAÇÃO PARTICIONADA ESTATICA ABSOLUTA
+
+os primeiros programas a serem abertos criam partições na memória de tamanhos definidos de acordo com eles. A partir de então todas as próximas aplicações terão que utilizar essas partições, sem alterar seu tamanho.
+
+Alocação particionada estatica relocável
+
+tinha uma espécie de tabela que ia realocando os processos e aplicações nas partições da memória para aumentar o espaço livre das partições da memória.
+
+
+ALOCAÇÃO PARTICIONADA DINAMICA
+
+não é boa pq envolve processamento. Ou seja, um processo OCUPA MEMÓRIA para tentar liberar memória que estava sendo usada por outra aplicação.
+
+usa compactação e desfragmentação
+
+
+
+=== swapping - ISSO NÃO É MEMÓRIA VIRTUAL
+tecnolgia usada hoje
+técnica de troca. tira um processo que está na memória ram, mas não está sendo requisitado pelo usuário, descarrega ele na memória secundaária (hd, pen drive), e qndo precicsar ser usda, é chamada novamente.
+
+ISSO NÃO É MEMÓRIA VIRTUAL
+A MMU AJUDA O TEMPO TODO NO MAPEAMENTO.
+
+memória virtual
+PROVA: WINDOWS COLOCOU UMA PALAVRA COMO DEFINIÇÃO MAS É OUTRA COISA, TÁ TROCADO. NÃO É ISSO QUE O WINDOWS FALA QUE É. MEMÓRIA VIRTUAL, O QUE É. PESQUISAR E VAI CAIR NA PROVA.
+
+MEMÓRIA VIRTUAL É JUNTAR RAM E SWAPPING E MAPEAR JUNTAMENTE COMO SE FOSSE UMA COISA SÓ VAI CAIR NA PROVA PROVA PROVAAA. ISSO É COM UM MAPEAMENTO (TIPO UM VETOR SÓ) APENAS COMO UA COSIA SÓ. O COMPTUADOR NEM SABE A DIFERENÇA.
+
+
+
+
+
+==== Mapeamento
+
+==== paginação
+
+blocos de endereçamento real são divididos em blocos do mesmo tamanho. No virtual são denominados paginas virutuais.
+
+hoje não é mais chamado de processos, mas de páginas.
+
+DOIS TIPOS DE PAGINAÇÃO
+
+POR DEMANDA
+
+ANTECIPADO
+windows usa esse desde o VISTA. isso que afundou o vista, chama superfetch. 
+usou o programa uma vez, a página fica lá na memória, para que qndo eu use novamente seja carregado mais rápido. Porém, se eu não usar, vai ficar lá ocupando a toa.
+
+
+bit de validade. pra validar, cada página carrega um bit. Se for 0 ele tá na swap, se for 1 ele tá na ram.
+
+mto fácil de lotar a memória de páginas.
+
+algoritmos de troca de páginas (similar ao troca de cache)
+
+todos os SO usam pelo menos 2.
+
+- aleatória (random)
+não é algoritmo nenhum. só pega troca e pronto. não perde tempo programando, mas pode tirar uma página mto importante que eu vá precisar.
+
+- FIFO
+a página mais velha é aquela que vai ser retirada. vantagem: tem uma ordem, mas a página mais velha não necessariamente é a menos utilizada. pode ser que eu retire uma página que o usuário precise.
+
+
+- LRU (Least-recently-used)
+retira o menos recentemente usado. vantagem: os que eu mais uso não vão sair. mas o "recente" é mto vago. essa definição varia. se for um recente mto longo vira aleatório pq quase todo mundo foi utilizado. mas se eu definio um recente mto curto, quase ngm foi utilizado, ai vira aleatório tb.
+
+- NRU - Not recently used
+mesma coisa do outro, depende do tempo de recente
+
+LFU - least-frequently-used
+vira uma pliha (lifo).
+
+== geralmente os SO combinam o LFU e o LRU.
+
+normalmente o SO tende a paginar os seguimentos dos processos.
+
+==== seguimentação
+
+é a fragmentação da aplicação como se fosse a técnica de overlay. 
+
+
+=== compartilhamento de memória  - threads.
+
+
+==== 5 técnicas que acontecem simultaneamente em apoio umas as outras para que o recurso de memória consiga rodar.
+
+cada SO cria mecanismos pra habilitar essas tecnologias de técnicas
+
+
+
+O MMU VAI FAZER TODO O GERENCIAMENTO DESSES NEGÓCIOS
+
+
+
+TRABALHO SÃO 3 PONTOS NA MÉDIA
+trabalho escrito e uma apresentação de 20 minutos (cronometrados)
+grupo de 5 pessoas
+nota vai ser 50% e 50% apresentação e trabalho escrito.
+não precisa todo mundo falar (nota global). Se todo mundo falar, a nota vai ser individual.
+Para: 19/11 com início 19:20h
+O tema foi sorteado.
+A ordem de apresentação também será sorteada no próprio dia.
+
+Explicar: 
+como o SO se comporta. Não quer teoria, mas sim a explicação do comportamento para processos, threads, como ele gerencia tudo isso, como ele trata deadlock, qual é o tipo de kernel que ele usa, como trata IO, e drivers, quantos sistemas de arquivo ele suporta, qual é o tipo, qual é o algorítmo de swap dele, de paginação, entre outros.
